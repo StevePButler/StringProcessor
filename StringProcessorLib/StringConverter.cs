@@ -1,12 +1,17 @@
-﻿using System;
+﻿#region Using Statements
+
+using System;
 using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
+
+#endregion
 
 namespace StringProcessorLib
 {
     public class StringConverter : IStringConverter
     {
+        #region Public Methods
+
         public List<string> ConvertStrings(List<string> inputStrings)
         {
             List<string> outputStrings = new List<string>();
@@ -62,5 +67,7 @@ namespace StringProcessorLib
 
             return outputStrings;
         }
+
+        #endregion
     }
 }
