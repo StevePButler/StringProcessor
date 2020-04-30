@@ -1,14 +1,20 @@
-﻿using System;
+﻿#region Using Statements
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StringProcessorLib;
+
+#endregion
 
 namespace UnitTestStringProcessor
 {
     [TestClass]
     public class StringConverterTests
     {
+        #region Test Methods
+
         [TestMethod]
         public void EmptyList_Returns_EmptyList()
         {
@@ -196,5 +202,7 @@ namespace UnitTestStringProcessor
             // Assert
             Assert.AreEqual("Ac91%cWwWkLq£1c", outputStrings[0], "Unexpected string returned.");
         }
+
+        #endregion
     }
 }

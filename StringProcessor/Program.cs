@@ -1,7 +1,11 @@
-﻿using StringProcessorLib;
+﻿#region Using Statements
+
+using StringProcessorLib;
 using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
+
+#endregion
 
 namespace StringProcessor
 {
@@ -9,12 +13,16 @@ namespace StringProcessor
     {
         static void Main(string[] args)
         {
+            #region Configuration
+
             // Setup Dependency Injection.
             var serviceProvider = new ServiceCollection()
                 .AddSingleton<IStringConverter, StringConverter>()
                 .BuildServiceProvider();
 
-            // Get converter.
+            #endregion
+
+            // Get converter (demonstrates how DI could be used for loose coupling).
             var converter = serviceProvider.GetService<IStringConverter>();
 
             List<string> inputStrings = new List<string>();
@@ -27,7 +35,7 @@ namespace StringProcessor
             
             foreach (string s in outputStrings)
             {
-                Console.WriteLine(s);
+                Console.WriteLine($"Output String: {s}");
             }
 
             Console.ReadLine();
