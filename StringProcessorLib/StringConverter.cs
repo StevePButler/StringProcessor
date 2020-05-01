@@ -28,7 +28,7 @@ namespace StringProcessorLib
                 string b = a.Trim().Replace(" ", String.Empty);
 
                 // Remove underscores.
-                string c = b.Trim().Replace("_", String.Empty);
+                string c = b.Replace("_", String.Empty);
 
                 // Remove 4's
                 string d = c.Replace("4", String.Empty);
